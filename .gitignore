@@ -1,21 +1,30 @@
-# Environnement virtuel
+# Environnements virtuels
 .venv/
 venv/
 env/
+ENV/
 
 # Caches Python et Notebooks
 __pycache__/
 *.py[cod]
 *$py.class
 .ipynb_checkpoints/
+
+# Caches de tests
 .pytest_cache/
+.coverage
+htmlcov/
 
-# Fichiers de données
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
 
-# Fichiers système
+data/raw/*.txt
+data/processed/*.parquet
+data/processed/*.csv.gz
+data/processed/*.npy
+
+# models/*.joblib
+
+# Fichiers système et IDE
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
