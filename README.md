@@ -8,7 +8,7 @@
 
 - LinkedIn : www.linkedin.com/in/alussemin
 
-- GitHub : [@ton-pseudo](https://github.com/ton-pseudo)
+- GitHub : https://github.com/Al-Ousseimine/predictive-maintenance-rul.git
 - Email : alussemin@gmail.com
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
@@ -66,8 +66,20 @@ L'évaluation porte sur la dernière mesure connue des 248 moteurs de test. Le m
 </p>
 
 ### Métrique Métier : La fonction de score NASA
+
 La fonction de pénalité de la NASA est exponentielle et asymétrique :
-$$S = \sum_{i=1}^{N} s_i \quad \text{où} \quad s_i = \begin{cases} e^{-d_i / 13} - 1 & \text{si } d_i < 0 \text{ (avance / conservateur)} \\ e^{d_i / 10} - 1 & \text{si } d_i \ge 0 \text{ (retard / critique)} \end{cases}$$
+
+$$
+S = \sum_{i=1}^{N} s_i
+$$
+
+avec :
+
+$$
+s_i = \begin{cases} e^{-d_i / 13} - 1 & \text{si } d_i < 0 \text{ (avance / conservateur)} \\ e^{d_i / 10} - 1 & \text{si } d_i \ge 0 \text{ (retard / critique)} \end{cases}
+$$
+
+Une surestimation de la RUL (prédire 30 cycles alors qu'il n'en reste que 10) est sanctionnée beaucoup plus sévèrement en raison du risque de casse en vol.
 
 Une surestimation de la RUL (prédire 30 cycles alors qu'il n'en reste que 10) est sanctionnée beaucoup plus sévèrement en raison du risque de catastrophe aérienne.
 
